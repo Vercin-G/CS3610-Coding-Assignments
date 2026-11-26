@@ -22,8 +22,11 @@ print("General Kenobi")
 #Let's start with our Abstract Products
 
 class iProduct(ABC):
+
     @abstractmethod
     def get_Price(): int
+
+    @abstractmethod
     def get_Description(): str
 
 class Pizza(iProduct):
@@ -86,3 +89,31 @@ class VegBurger(Burger):
 
     def showVegBurgerAdver(self):
         return "I am a Vegetarian Burger"
+
+#Factories !!!
+
+class ProductFactory(ABC):
+
+    @abstractmethod
+    def createBurger(self, p, c, d) -> Burger:
+        pass
+
+    @abstractmethod
+    def createPizza(self, p, c, s, d) -> Pizza:
+        pass
+
+class NonVegProductFactory(ProductFactory):
+    def createBurger(self, p, c, d) -> NonVegBurger:
+        return NonVegBurger(self, p, c, d)
+
+    def createPizza(self, p, c, s, d) -> NonVegPizza:
+        return NonVegPizza(self, p, c, s, d)
+
+class VegProductFactory(ProductFactory):
+    def createBurger(self, p, c, d) -> VegBurger:
+        return VegBurger(self, p, c, d)
+
+    def createPizza(self, p, c, s, d) -> VegPizza:
+        return VegPizza(self, p, c, s, d)
+
+
