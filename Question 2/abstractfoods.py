@@ -33,3 +33,27 @@ class Burger(iProduct):
 
     def get_Description(self) -> str:
         return self.__descr
+
+class Noodles(iProduct):
+
+    __price = 0
+    __calories = 0
+    __descr = ""
+
+    def get_Price(self) -> int:
+        pass
+
+    def get_Description(self) -> str:
+        pass
+
+class Cutlet(iProduct):
+
+    __price = 0
+    __calories = 0
+    __descr = ""
+
+    def get_Price(self) -> int:
+        pass
+    
+    def get_Description(self) -> str:
+        pass

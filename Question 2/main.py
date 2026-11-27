@@ -40,7 +40,3 @@ class FoodApp:
             )
 
         return result
-
-
-
-
