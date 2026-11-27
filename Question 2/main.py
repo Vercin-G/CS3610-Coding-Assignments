@@ -1,4 +1,5 @@
-from factories import VegProductFactory, NonVegProductFactory
+from factories import *
+from abstractfoods import *
 
 class FoodApp:
     def __init__(self):
